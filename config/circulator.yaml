@@ -2,18 +2,11 @@
 
 - platform: mqtt
   name: "Living Circulator"
-  state_topic:         "circulator/livingroom/power"
-  command_topic:       "circulator/livingroom/power/set"
-  speed_state_topic:   "circulator/livingroom/fanmode"
-  speed_command_topic: "circulator/livingroom/fanmode/set"
+  state_topic:              "circulator/livingroom/power"
+  command_topic:            "circulator/livingroom/power/set"
+  percentage_state_topic:   "circulator/livingroom/fanmode"
+  percentage_command_topic: "circulator/livingroom/fanmode/set"
   payload_on:  "on"
   payload_off: "off"
-  payload_low_speed:    "low"
-  payload_medium_speed: "medium"
-  payload_high_speed:   "high"
-  speeds:
-    - "off"
-    - low
-    - medium
-    - high
-
+  speed_range_min: 1
+  speed_range_max: 5

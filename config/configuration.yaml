@@ -58,6 +58,7 @@ recorder:
       - lock
       - fan
       - proximity
+      - vacuum
   exclude:
     domains:
       - automation
