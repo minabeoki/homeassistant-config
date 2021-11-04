@@ -29,8 +29,8 @@ recorder:
     entities:
       - climate.bedroom_aircon
       - climate.living_aircon
-      - device_tracker.iphonex_gps
       - device_tracker.iphone11_gps
+      - device_tracker.iphonex_3
       - input_boolean.sleeping
       - sensor.jr_info
       - sensor.living_temperature
@@ -48,6 +48,7 @@ recorder:
       - sensor.netatmo_outdoor_temperature
       - sensor.dishwasher_power
       - sensor.house_power
+      - sensor.energy_house
       - sensor.entrance_lux
       - sensor.entrance_temp
       - switch.floor_heater_kitchen
@@ -189,6 +190,7 @@ system_health:
 sun:
 mobile_app:
 zeroconf:
+energy:
 
 person: !include person.yaml
 switch: !include switch.yaml

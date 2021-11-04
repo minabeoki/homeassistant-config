@@ -24,7 +24,7 @@
       entity_id: lock.door_lock
       state: 'unlocked'
   action:
-    - service: notify.mobile_app_iphonex
+    - service: notify.mobile_app_iphone13_pro
       data:
         message: "鍵が開いてます"
         data:
@@ -44,7 +44,7 @@
       entity_id: person.me
       state: 'not_home'
   action:
-    - service: notify.mobile_app_iphonex
+    - service: notify.mobile_app_iphone13_pro
       data:
         message: "自宅に訪問者がいます"
         data:

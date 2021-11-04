@@ -27,6 +27,11 @@
   name: 'Bedroom Humidity'
   unit_of_measurement: '%'
 
+- platform: integration
+  source: sensor.house_power
+  name: energy_house
+  unit_prefix: k
+
 - platform: statistics
   name: outdoor_stat
   entity_id: sensor.reference

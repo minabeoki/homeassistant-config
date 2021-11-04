@@ -26,7 +26,7 @@ notify_speech:
     - service: media_player.google_living
       data_template:
         entity_id: media_player.google_living
-        volume_level: 0.6
+        volume_level: 0.5
     - service: tts.google_say
       entity_id: media_player.google_living
       data_template:

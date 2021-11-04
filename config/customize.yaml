@@ -404,3 +404,38 @@ sensor.outdoor_average:
   device_class: temperature
   unit_of_measurement: °C
   friendly_name: 1日平均気温
+device_tracker.iphonex_3: {}
+sensor.iphonex_storage:
+  friendly_name: iPhone13 Storage
+sensor.iphonex_battery_level_2:
+  friendly_name: iPhone13 Battery Level
+sensor.iphonex_ssid:
+  friendly_name: iPhone13 SSID
+sensor.iphonex_distance:
+  friendly_name: iPhone13 Distance
+sensor.iphonex_steps:
+  friendly_name: iPhone13 Steps
+sensor.iphonex_bssid:
+  friendly_name: iPhone13 BSSID
+sensor.iphonex_floors_ascended:
+  friendly_name: iPhone13 Floors Ascended
+sensor.iphonex_activity:
+  friendly_name: iPhone13 Activity
+sensor.iphonex_average_active_pace:
+  friendly_name: iPhone13 Average Active Pace
+sensor.iphonex_geocoded_location:
+  friendly_name: iPhone13 Geocoded Location
+sensor.iphonex_battery_state_2:
+  friendly_name: iPhone13 Battery State
+sensor.iphonex_floors_descended:
+  friendly_name: iPhone13 Floors Descended
+sensor.iphonex_last_update_trigger:
+  friendly_name: iPhone13 Last Update Trigger
+sensor.iphonex_sim_1:
+  friendly_name: iPhone13 SIM 1
+sensor.iphonex_sim_2:
+  friendly_name: iPhone13 SIM 2
+sensor.iphonex_connection_type:
+  friendly_name: iPhone13 Connection Type
+sensor.energy_house:
+  friendly_name: 電力消費
