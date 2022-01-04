@@ -53,6 +53,10 @@ recorder:
       - sensor.entrance_temp
       - switch.floor_heater_kitchen
       - switch.floor_heater_living
+      - sensor.ewelink_th01_183da523_humidity
+      - sensor.ewelink_th01_183da523_temperature
+      - sensor.ewelink_th01_676c9e23_humidity
+      - sensor.ewelink_th01_676c9e23_temperature
     domains:
       - binary_sensor
       - media_player

@@ -27,6 +27,18 @@
     - service: script.turn_on
       entity_id: script.comfort_bedroom
 
+- alias: Comfort Bedroom Morning
+  trigger:
+    - platform: time
+      at: '7:00:00'
+  condition:
+    - condition: state
+      entity_id: group.family_devices
+      state: 'home'
+  action:
+    - service: script.turn_on
+      entity_id: script.heat_bedroom_demand
+
 - alias: Comfort Living Night
   trigger:
     - platform: numeric_state
@@ -95,6 +107,18 @@
   trigger:
     - platform: time
       at: '13:00:00'
+  action:
+    - service: script.turn_on
+      entity_id: script.off_bedroom
+
+- alias: Off Bedroom Morning Winter
+  trigger:
+    - platform: time
+      at: '09:00:00'
+  condition:
+    - condition: state
+      entity_id: binary_sensor.cond_cold
+      state: 'on'
   action:
     - service: script.turn_on
       entity_id: script.off_bedroom
