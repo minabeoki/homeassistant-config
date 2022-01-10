@@ -136,6 +136,14 @@ ios:
       icon:
         icon: weather-windy
         color: "#ffffff"
+    - name: ActionLock
+      background_color: "#448844"
+      label:
+        text: "玄関カギ"
+        color: "#aaffaa"
+      icon:
+        icon: home-lock
+        color: "#ffffff"
 
 homekit:
   filter:

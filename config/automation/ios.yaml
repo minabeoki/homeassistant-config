@@ -1,0 +1,42 @@
+##
+## tag
+##
+
+- id: ios_door_lock
+  alias: "Door Lock/Unlock"
+  trigger:
+    - platform: event
+      event_type: ios.action_fired
+      event_data:
+        actionName: "ActionLock"
+  condition:
+    - condition: state
+      entity_id: group.family_devices
+      state: 'home'
+  action:
+    - service: "lock.{{ 'lock' if states('lock.door_lock') == 'unlocked' else 'unlock' }}"
+      entity_id: lock.door_lock
+
+- id: ios_heat
+  alias: "Action Heat"
+  trigger:
+    - platform: event
+      event_type: ios.action_fired
+      event_data:
+        actionName: "ActionHeat"
+  action:
+    - service: script.turn_on
+      entity_id: script.heat_living
+ 
+- id: ios_cool
+  alias: "Action Cool"
+  trigger:
+    - platform: event
+      event_type: ios.action_fired
+      event_data:
+        actionName: "ActionCool"
+  action:
+    - service: script.turn_on
+      entity_id: script.cool_living
+ 
+
