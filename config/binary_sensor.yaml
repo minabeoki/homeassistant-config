@@ -29,6 +29,7 @@
     - '2021-12-31'
     - '2022-01-03'
     - '2022-01-04'
+    - '2022-01-31'
 
 - platform: template
   sensors:
@@ -36,7 +37,7 @@
       delay_off:
         minutes: 10
       value_template: >-
-        {{ states.sensor.dishwasher_power.state|float > 2.3 }}
+        {{ states.sensor.dishwasher_power.state|float(0) > 2.3 }}
 
 - platform: threshold
   name: cond_hot

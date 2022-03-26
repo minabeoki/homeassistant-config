@@ -5,7 +5,11 @@
 - alias: Comfort Bedroom Night
   trigger:
     - platform: time
+      at: '21:00:00'
+    - platform: time
       at: '22:00:00'
+    - platform: time
+      at: '22:30:00'
     - platform: time
       at: '23:00:00'
     - platform: time
@@ -21,7 +25,7 @@
         entity_id: group.family_devices
         state: 'home'
       - condition: time
-        after: '22:00:00'
+        after: '21:00:00'
         before: '02:00:00'
   action:
     - service: script.turn_on
@@ -30,7 +34,7 @@
 - alias: Comfort Bedroom Morning
   trigger:
     - platform: time
-      at: '7:00:00'
+      at: '6:50:00'
   condition:
     - condition: state
       entity_id: group.family_devices

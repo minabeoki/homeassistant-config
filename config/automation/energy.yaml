@@ -22,11 +22,12 @@
 
 - alias: Auto Enabler
   trigger:
-    - platform: state
+    - platform: time_pattern
+      minutes: "/5"
+  condition:
+    - condition: state
       entity_id: switch.washer
-      to: 'off'
-      for:
-        seconds: 60
+      state: 'off'
   action:
     - service: switch.turn_on
       entity_id: switch.washer
