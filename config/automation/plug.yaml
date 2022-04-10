@@ -1,0 +1,15 @@
+##
+## plug notification
+##
+
+- alias: Drum Washer Finish
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.drumwasher
+      from: 'on'
+      to: 'off'
+  action:
+    - service: tts.google_say
+      entity_id: media_player.google_living
+      data_template:
+        message: "洗濯が終わりました。"

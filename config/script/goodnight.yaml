@@ -18,6 +18,4 @@ check_dishwasher:
       entity_id: media_player.google_living
       data_template:
         message: >
-          食洗機はつけましたか？
-
-#          食洗機がついてません。
+          食洗機がついてません。

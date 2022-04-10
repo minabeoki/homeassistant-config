@@ -46,11 +46,12 @@ recorder:
       - sensor.netatmo_house_temperature
       - sensor.netatmo_outdoor_humidity
       - sensor.netatmo_outdoor_temperature
-      - sensor.dishwasher_power
       - sensor.house_power
       - sensor.energy_house
       - sensor.entrance_lux
       - sensor.entrance_temp
+      - sensor.dishwasher_power
+      - sensor.drumwasher_power
       - switch.floor_heater_kitchen
       - switch.floor_heater_living
       - sensor.ewelink_th01_183da523_humidity
@@ -112,9 +113,9 @@ netatmo:
 #  username:   !secret netatmo_username
 #  password:   !secret netatmo_password
 
-wemo:
-  static:
-    - 192.168.0.56
+#wemo:
+#  static:
+#    - 192.168.0.56
 
 hue:
 
@@ -166,7 +167,6 @@ homekit:
       - script
       - group
     exclude_entities:
-      - switch.washer
       - switch.blind
 
 device_tracker:

@@ -127,8 +127,6 @@ sensor.doorphone_counter:
 device_tracker.iphonex_2:
   friendly_name: iPhoneX_bt
   hidden: true
-switch.washer:
-  hidden: true
 sensor.doorphone:
   hidden: true
 sensor.trash_day:
@@ -447,3 +445,10 @@ sensor.ewelink_th01_676c9e23_humidity:
   friendly_name: 寝室湿度
 sensor.ewelink_th01_676c9e23_temperature:
   friendly_name: 寝室気温
+sensor.tasmota_energy_power: {}
+sensor.tasmotadrum_energy_power: {}
+binary_sensor.drumwasher:
+  friendly_name: 洗濯機
+sensor.drumwasher_power:
+  friendly_name: 洗濯機電力
+  icon: mdi:lightning-bolt

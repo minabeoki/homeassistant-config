@@ -20,15 +20,15 @@
     - service: script.turn_on
       entity_id: script.notify_energy
 
-- alias: Auto Enabler
-  trigger:
-    - platform: time_pattern
-      minutes: "/5"
-  condition:
-    - condition: state
-      entity_id: switch.washer
-      state: 'off'
-  action:
-    - service: switch.turn_on
-      entity_id: switch.washer
+#- alias: Auto Enabler
+#  trigger:
+#    - platform: time_pattern
+#      minutes: "/5"
+#  condition:
+#    - condition: state
+#      entity_id: switch.washer
+#      state: 'off'
+#  action:
+#    - service: switch.turn_on
+#      entity_id: switch.washer
 
