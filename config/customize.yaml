@@ -452,3 +452,4 @@ binary_sensor.drumwasher:
 sensor.drumwasher_power:
   friendly_name: 洗濯機電力
   icon: mdi:lightning-bolt
+  unit_of_measurement: W
