@@ -437,6 +437,7 @@ sensor.iphonex_connection_type:
   friendly_name: iPhone13 Connection Type
 sensor.energy_house:
   friendly_name: 電力消費
+  device_class: energy
 sensor.ewelink_th01_183da523_humidity:
   friendly_name: リビング湿度
 sensor.ewelink_th01_183da523_temperature:
