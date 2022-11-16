@@ -24,16 +24,16 @@
       entity_id: lock.door_lock
       state: 'unlocked'
   action:
+    - service: tts.google_say
+      entity_id: media_player.google_living
+      data_template:
+        message: "玄関の鍵が開いてます"
     - service: notify.mobile_app_iphone13_pro
       data:
         message: "鍵が開いてます"
         data:
           push:
             sound: "se_chakushin.wav"
-    - service: tts.google_say
-      entity_id: media_player.google_living
-      data_template:
-        message: "玄関の鍵が開いてます"
 
 - alias: Doorphone push
   trigger:

@@ -27,7 +27,7 @@ notify_energy:
 notify_speech:
   alias: Notify Speech
   sequence:
-    - service: media_player.google_living
+    - service: media_player.volume_set
       data_template:
         entity_id: media_player.google_living
         volume_level: 0.5

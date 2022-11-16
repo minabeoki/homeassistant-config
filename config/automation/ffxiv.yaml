@@ -11,10 +11,10 @@
       weekday:
         - sat
   action:
-    - service: media_player.google_living
+    - service: media_player.volume_set
       data_template:
         entity_id: media_player.google_living
-        volume_level: 0.4
+        volume_level: 0.5
     - service: tts.google_say
       entity_id: media_player.google_living
       data_template:
@@ -35,10 +35,10 @@
       weekday:
         - sat
   action:
-    - service: media_player.google_living
+    - service: media_player.volume_set
       data_template:
         entity_id: media_player.google_living
-        volume_level: 0.4
+        volume_level: 0.5
     - service: tts.google_say
       entity_id: media_player.google_living
       data_template:
