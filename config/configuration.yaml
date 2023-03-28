@@ -54,10 +54,12 @@ recorder:
       - sensor.drumwasher_power
       - switch.floor_heater_kitchen
       - switch.floor_heater_living
+      - sensor.vindstyrka_living_humidity
+      - sensor.vindstyrka_living_temperature
       - sensor.ewelink_th01_183da523_humidity
       - sensor.ewelink_th01_183da523_temperature
-      - sensor.ewelink_th01_676c9e23_humidity
-      - sensor.ewelink_th01_676c9e23_temperature
+      - sensor.ewelink_th01_483da523_humidity
+      - sensor.ewelink_th01_483da523_temperature
     domains:
       - binary_sensor
       - media_player

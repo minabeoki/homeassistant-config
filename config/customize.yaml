@@ -442,9 +442,9 @@ sensor.ewelink_th01_183da523_humidity:
   friendly_name: リビング湿度
 sensor.ewelink_th01_183da523_temperature:
   friendly_name: リビング気温
-sensor.ewelink_th01_676c9e23_humidity:
+sensor.ewelink_th01_483da523_humidity:
   friendly_name: 寝室湿度
-sensor.ewelink_th01_676c9e23_temperature:
+sensor.ewelink_th01_483da523_temperature:
   friendly_name: 寝室気温
 sensor.tasmota_energy_power: {}
 sensor.tasmotadrum_energy_power: {}
