@@ -1,20 +1,5 @@
 # switch
 
-- platform: mqtt
-  name: "Floor Heater Living"
-  command_topic: "dio/set0"
-  state_topic:   "dio/in0"
-  payload_on:  "1"
-  payload_off: "0"
-  retain: true
-- platform: mqtt
-  name: "Floor Heater Kitchen"
-  command_topic: "dio/set1"
-  state_topic:   "dio/in1"
-  payload_on:  "1"
-  payload_off: "0"
-  retain: true
-
 - platform: template
   switches:
     heat_living:

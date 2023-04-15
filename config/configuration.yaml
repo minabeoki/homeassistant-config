@@ -7,6 +7,8 @@ homeassistant:
   internal_url: !secret internal_url
   unit_system: metric
   time_zone: Asia/Tokyo
+  currency: JPY
+  country: JP
 
   allowlist_external_dirs:
     - '/config/doorphone'
@@ -107,11 +109,56 @@ http:
 #  api_password: !secret http_password
 
 mqtt:
-  broker: !secret mqtt_broker
+#  broker: !secret mqtt_broker
+  climate: !include climate.yaml
+  fan: !include circulator.yaml
 
-netatmo:
-  client_id:     !secret netatmo_id
-  client_secret: !secret netatmo_secret
+  lock:
+    - name: "Door Lock"
+      command_topic:  "dio/set3"
+      state_topic:    "dio/in3"
+      payload_lock:   "1"
+      payload_unlock: "0"
+      state_locked:   "1"
+      state_unlocked: "0"
+      retain: true
+
+  switch:
+    - name: "Floor Heater Living"
+      command_topic: "dio/set0"
+      state_topic:   "dio/in0"
+      payload_on:  "1"
+      payload_off: "0"
+      retain: true
+    - name: "Floor Heater Kitchen"
+      command_topic: "dio/set1"
+      state_topic:   "dio/in1"
+      payload_on:  "1"
+      payload_off: "0"
+      retain: true
+
+  sensor:
+    - name: 'House Power'
+      state_topic: "sensor/watt"
+      unit_of_measurement: 'W'
+    - name: 'Outdoor0'
+      state_topic: "sensor/aircon/livingroom/outtemp"
+    - name: 'Outdoor1'
+      state_topic: "sensor/aircon/bedroom/outtemp"
+    - name: 'Living Temperature'
+      state_topic: "sensor/aircon/livingroom/temperature"
+    - name: 'Living Humidity'
+      state_topic: "sensor/aircon/livingroom/humidity"
+      unit_of_measurement: '%'
+    - name: 'Bedroom Temperature'
+      state_topic: "sensor/aircon/bedroom/temperature"
+    - name: 'Bedroom Humidity'
+      state_topic: "sensor/aircon/bedroom/humidity"
+      unit_of_measurement: '%'
+
+#netatmo:
+#  client_id:     !secret netatmo_id
+#  client_secret: !secret netatmo_secret
 #  username:   !secret netatmo_username
 #  password:   !secret netatmo_password
 
@@ -208,8 +255,6 @@ energy:
 
 person: !include person.yaml
 switch: !include switch.yaml
-climate: !include climate.yaml
-fan: !include circulator.yaml
 sensor: !include sensor.yaml
 binary_sensor: !include binary_sensor.yaml
 
@@ -219,16 +264,6 @@ input_boolean:
     initial: off
     icon: mdi:sleep
 
-lock:
-  - platform: mqtt
-    name: "Door Lock"
-    command_topic:  "dio/set3"
-    state_topic:    "dio/in3"
-    payload_lock:   "1"
-    payload_unlock: "0"
-    state_locked:   "1"
-    state_unlocked: "0"
-    retain: true
  
 camera:
   - platform: local_file

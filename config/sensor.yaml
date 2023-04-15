@@ -2,31 +2,6 @@
 
 - platform: season
 
-- platform: mqtt
-  state_topic: "sensor/watt"
-  name: 'House Power'
-  unit_of_measurement: 'W'
-- platform: mqtt
-  state_topic: "sensor/aircon/livingroom/outtemp"
-  name: 'Outdoor0'
-- platform: mqtt
-  state_topic: "sensor/aircon/bedroom/outtemp"
-  name: 'Outdoor1'
-- platform: mqtt
-  state_topic: "sensor/aircon/livingroom/temperature"
-  name: 'Living Temperature'
-- platform: mqtt
-  state_topic: "sensor/aircon/livingroom/humidity"
-  name: 'Living Humidity'
-  unit_of_measurement: '%'
-- platform: mqtt
-  state_topic: "sensor/aircon/bedroom/temperature"
-  name: 'Bedroom Temperature'
-- platform: mqtt
-  state_topic: "sensor/aircon/bedroom/humidity"
-  name: 'Bedroom Humidity'
-  unit_of_measurement: '%'
-
 - platform: integration
   source: sensor.house_power
   name: energy_house
@@ -35,6 +10,7 @@
 - platform: statistics
   name: outdoor_stat
   entity_id: sensor.reference
+  state_characteristic: average_linear
   sampling_size: 1200
   max_age:
     hours: 24

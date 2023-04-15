@@ -1,7 +1,6 @@
-# circulator (fan)
+# circulator (mqtt.fan)
 
-- platform: mqtt
-  name: "Living Circulator"
+- name: "Living Circulator"
   state_topic:              "circulator/livingroom/power"
   command_topic:            "circulator/livingroom/power/set"
   percentage_state_topic:   "circulator/livingroom/fanmode"

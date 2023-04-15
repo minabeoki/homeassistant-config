@@ -1,7 +1,6 @@
 # climate
 
-- platform: mqtt
-  name: "Living Aircon"
+- name: "Living Aircon"
   modes:
     - "off"
     - "auto"
@@ -12,8 +11,8 @@
   fan_modes:
     - "auto"
   current_temperature_topic: "sensor/aircon/livingroom/temperature"
-  power_command_topic:       "aircon/livingroom/power/set"
-  power_state_topic:         "aircon/livingroom/power"
+  #power_command_topic:       "aircon/livingroom/power/set"
+  #power_state_topic:         "aircon/livingroom/power"
   mode_command_topic:        "aircon/livingroom/mode/set"
   mode_state_topic:          "aircon/livingroom/mode"
   temperature_command_topic: "aircon/livingroom/temperature/set"
@@ -21,8 +20,7 @@
   payload_on: "on"
   payload_off: "off"
 
-- platform: mqtt
-  name: "Bedroom Aircon"
+- name: "Bedroom Aircon"
   modes:
     - "off"
     - "auto"
@@ -33,8 +31,8 @@
   fan_modes:
     - "auto"
   current_temperature_topic: "sensor/aircon/bedroom/temperature"
-  power_command_topic:       "aircon/bedroom/power/set"
-  power_state_topic:         "aircon/bedroom/power"
+  #power_command_topic:       "aircon/bedroom/power/set"
+  #power_state_topic:         "aircon/bedroom/power"
   mode_command_topic:        "aircon/bedroom/mode/set"
   mode_state_topic:          "aircon/bedroom/mode"
   temperature_command_topic: "aircon/bedroom/temperature/set"

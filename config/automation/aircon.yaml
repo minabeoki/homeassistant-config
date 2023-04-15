@@ -36,9 +36,14 @@
     - platform: time
       at: '6:50:00'
   condition:
-    - condition: state
-      entity_id: group.family_devices
-      state: 'home'
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: sensor.season
+        state: 'winter'
+      - condition: state
+        entity_id: group.family_devices
+        state: 'home'
   action:
     - service: script.turn_on
       entity_id: script.heat_bedroom_demand
