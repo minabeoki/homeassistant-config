@@ -1,7 +1,5 @@
 # sensors
 
-- platform: season
-
 - platform: integration
   source: sensor.house_power
   name: energy_house

@@ -58,6 +58,7 @@ recorder:
       - switch.floor_heater_living
       - sensor.vindstyrka_living_humidity
       - sensor.vindstyrka_living_temperature
+      - sensor.vindstyrka_living_particulate_matter
       - sensor.ewelink_th01_183da523_humidity
       - sensor.ewelink_th01_183da523_temperature
       - sensor.ewelink_th01_483da523_humidity
