@@ -253,6 +253,7 @@ sun:
 mobile_app:
 zeroconf:
 energy:
+media_source:
 
 person: !include person.yaml
 switch: !include switch.yaml

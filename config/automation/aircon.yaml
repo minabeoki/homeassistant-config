@@ -40,7 +40,7 @@
     conditions:
       - condition: state
         entity_id: sensor.season
-        state: 'winter'
+        state: 'Winter'
       - condition: state
         entity_id: group.family_devices
         state: 'home'
