@@ -259,6 +259,7 @@ person: !include person.yaml
 switch: !include switch.yaml
 sensor: !include sensor.yaml
 binary_sensor: !include binary_sensor.yaml
+scrape: !include scrape.yaml
 
 input_boolean:
   sleeping:
