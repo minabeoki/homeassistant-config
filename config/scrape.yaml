@@ -1,7 +1,7 @@
 # scrape
 
 - resource: http://traininfo.jreast.co.jp/train_info/line.aspx?gid=1&lineid=yamanoteline
-  scan_interval: 900
+  scan_interval: 600
   sensor:
     - name: JR info
       select: ".cardsBox"
