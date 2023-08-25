@@ -1,0 +1,38 @@
+# light (mqtt.light)
+
+- name: "Corner Light A"
+  payload_on:  "on"
+  payload_off: "off"
+  state_topic:              "light/0/power"
+  command_topic:            "light/0/power/set"
+
+- name: "Corner Light B"
+  payload_on:  "on"
+  payload_off: "off"
+  state_topic:              "light/1/power"
+  command_topic:            "light/1/power/set"
+
+- name: "Living Light"
+  payload_on:  "on"
+  payload_off: "off"
+  state_topic:              "light/2/power"
+  command_topic:            "light/2/power/set"
+#  brightness_state_topic:   "light/2/brightness"
+#  brightness_command_topic: "light/2/brightness/set"
+
+- name: "Living Table Light"
+  payload_on:  "on"
+  payload_off: "off"
+  state_topic:              "light/3/power"
+  command_topic:            "light/3/power/set"
+#  brightness_state_topic:   "light/3/brightness"
+#  brightness_command_topic: "light/3/brightness/set"
+
+- name: "Living Spot Light"
+  payload_on:  "on"
+  payload_off: "off"
+  state_topic:              "light/4/power"
+  command_topic:            "light/4/power/set"
+#  brightness_state_topic:   "light/3/brightness"
+#  brightness_command_topic: "light/3/brightness/set"
+

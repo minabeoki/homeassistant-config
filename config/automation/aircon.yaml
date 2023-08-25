@@ -5,8 +5,6 @@
 - alias: Comfort Bedroom Night
   trigger:
     - platform: time
-      at: '21:00:00'
-    - platform: time
       at: '22:00:00'
     - platform: time
       at: '22:30:00'

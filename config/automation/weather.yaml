@@ -8,6 +8,8 @@
       at: '00:00:00'
     - platform: time
       at: '01:00:00'
+    - platform: time
+      at: '02:00:00'
   action:
     - service: media_player.volume_set
       data_template:
@@ -24,9 +26,25 @@
             {{ states('sensor.trash_day') }}
             {{ states('sensor.trash_day') }}
           {% endif %}
-          {% if not is_state('sensor.visit_schedule', '') %}
-            明日は仕事の外出予定があります。
-          {% endif %}
+
+- alias: Night Jihou3
+  trigger:
+    - platform: time
+      at: '03:00:00'
+  action:
+    - service: media_player.volume_set
+      data_template:
+        entity_id: media_player.google_living
+        volume_level: 0.5
+    - service: tts.google_say
+      entity_id: media_player.google_living
+      data_template:
+        message: >
+          {{ [
+          "もう3時ですよ。",
+          "3時になりました。",
+          "3時になっちゃいました。",
+          ] | random }}
 
 - alias: Train Info
   trigger:

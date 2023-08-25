@@ -26,14 +26,13 @@ homeassistant:
       hidden: true
 
 recorder:
-  purge_keep_days: 10
+  purge_keep_days: 30
   include:
     entities:
       - climate.bedroom_aircon
       - climate.living_aircon
       - device_tracker.iphone11_gps
       - device_tracker.iphonex_3
-      - input_boolean.sleeping
       - sensor.jr_info
       - sensor.living_temperature
       - sensor.living_humidity
@@ -65,7 +64,6 @@ recorder:
       - sensor.ewelink_th01_483da523_temperature
     domains:
       - binary_sensor
-      - media_player
       - lock
       - fan
       - proximity
@@ -113,6 +111,7 @@ mqtt:
 #  broker: !secret mqtt_broker
   climate: !include climate.yaml
   fan: !include circulator.yaml
+  light: !include light.yaml
 
   lock:
     - name: "Door Lock"
@@ -241,7 +240,7 @@ google_assistant:
 #  devices:
 #    - host: 192.168.0.60
 
-alexa:
+#alexa:
 
 frontend:
 config:
@@ -255,6 +254,8 @@ zeroconf:
 energy:
 media_source:
 
+zha_toolkit:
+
 person: !include person.yaml
 switch: !include switch.yaml
 sensor: !include sensor.yaml
@@ -266,7 +267,6 @@ input_boolean:
     name: Sleeping
     initial: off
     icon: mdi:sleep
-
  
 camera:
   - platform: local_file
