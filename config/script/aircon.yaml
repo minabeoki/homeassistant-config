@@ -78,6 +78,20 @@ cool_bedroom:
         temperature: 29
         hvac_mode: cool
 
+adjust_bedroom:
+  alias: Adjust Bedroom
+  sequence:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.bedroom_aircon
+        temperature: 28
+    - delay:
+        minutes: 80
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.bedroom_aircon
+        temperature: 29
+
 cool_living_demand:
   alias: Cool Living on Demand
   sequence:

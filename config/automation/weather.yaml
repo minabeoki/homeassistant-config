@@ -19,6 +19,9 @@
       entity_id: media_player.google_living
       data_template:
         message: >
+          {% if now().strftime('%H')|int==2 %}
+            もう2時ですよ。
+          {% endif %}
           {{ states('sensor.weather_forecast') }}
           {{ states('sensor.weather_forecast') }}
           {% if not is_state('sensor.trash_day', 'off') %}

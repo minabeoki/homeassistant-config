@@ -29,6 +29,26 @@
     - service: script.turn_on
       entity_id: script.comfort_bedroom
 
+- alias: Adjust Bedroom Night
+  trigger:
+    - platform: time
+      at: '01:20:00'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: group.family_devices
+        state: 'home'
+      - condition: state
+        entity_id: sensor.season
+        state: 'summer'
+      - condition: state
+        entity_id: climate.bedroom_aircon
+        state: 'cool'
+  action:
+    - service: script.turn_on
+      entity_id: script.adjust_bedroom
+
 - alias: Comfort Bedroom Morning
   trigger:
     - platform: time
