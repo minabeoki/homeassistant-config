@@ -1,0 +1,19 @@
+##
+## IKEA VINDSTYRKA Zigbee Air quality sensor
+##
+
+- alias: Update vindstyrka
+  trigger:
+    - platform: time_pattern
+      seconds: "30"
+  condition: []
+  action:
+    - service: zha_toolkit.attr_read
+      data:
+        ieee: sensor.vindstyrka_living_particulate_matter
+        use_cache: false
+        force_update: true
+        endpoint: 1
+        cluster: 1066
+        attribute: 0
+        mode: single
