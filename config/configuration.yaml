@@ -58,10 +58,11 @@ recorder:
       - sensor.vindstyrka_living_humidity
       - sensor.vindstyrka_living_temperature
       - sensor.vindstyrka_living_particulate_matter
-      - sensor.ewelink_th01_183da523_humidity
-      - sensor.ewelink_th01_183da523_temperature
-      - sensor.ewelink_th01_483da523_humidity
-      - sensor.ewelink_th01_483da523_temperature
+      - light.corner_light_a
+      - light.corner_light_b
+      - light.living_light
+      - light.living_table_light
+      - light.living_spot_light
     domains:
       - binary_sensor
       - lock
@@ -212,6 +213,11 @@ homekit:
       - sensor.netatmo_house_noise
       - sensor.netatmo_outdoor_temperature
       - sensor.netatmo_outdoor_humidity
+      - light.corner_light_a
+      - light.corner_light_b
+      - light.living_light
+      - light.living_table_light
+      - light.living_spot_light
     exclude_domains:
       - script
       - group
@@ -268,6 +274,11 @@ input_boolean:
     initial: off
     icon: mdi:sleep
  
+folder_watcher:
+  - folder: /config/doorphone
+    patterns:
+      - '*.jpg'
+
 camera:
   - platform: local_file
     name: Doorphone

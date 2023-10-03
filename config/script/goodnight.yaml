@@ -4,6 +4,8 @@ goodnight:
     - service: script.turn_on
       entity_id: script.off_living
     - service: script.turn_on
+      entity_id: script.off_living_light
+    - service: script.turn_on
       entity_id: script.check_dishwasher
     - service: script.turn_on
       entity_id: script.off_heat_bedroom

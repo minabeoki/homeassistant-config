@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  hass:
+    image: homeassistant/home-assistant:2023.4.4
+    container_name: home-assistant
+    hostname: hahost
+    restart: always
+    privileged: true
+    net: "host"
+    environment:
+      TZ: Asia/Tokyo
+    volumes:
+      - /home/hass/config:/config
+      - /etc/localtime:/etc/localtime:ro
+      - /dev/bus/usb:/dev/bus/usb
+    devices:
+      - /dev/vhci:/dev/vhci
+

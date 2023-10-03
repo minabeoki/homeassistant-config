@@ -163,16 +163,6 @@ off_living:
       value_template: "{{ not is_state('climate.living_aircon', 'off') }}"
     - service: climate.turn_off
       entity_id: climate.living_aircon
-    - service: light.turn_off
-      entity_id: light.living_light
-    - service: light.turn_off
-      entity_id: light.living_spot_light
-    - service: light.turn_off
-      entity_id: light.living_table_light
-    - service: light.turn_off
-      entity_id: light.corner_light_a
-    - service: light.turn_off
-      entity_id: light.corner_light_b
 
 off_bedroom:
   alias: Off Bedroom

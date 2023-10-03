@@ -33,6 +33,6 @@
   payload_off: "off"
   state_topic:              "light/4/power"
   command_topic:            "light/4/power/set"
-#  brightness_state_topic:   "light/3/brightness"
-#  brightness_command_topic: "light/3/brightness/set"
+#  brightness_state_topic:   "light/4/brightness"
+#  brightness_command_topic: "light/4/brightness/set"
 
