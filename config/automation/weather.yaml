@@ -14,7 +14,7 @@
     - service: media_player.volume_set
       data_template:
         entity_id: media_player.google_living
-        volume_level: 0.5
+        volume_level: 0.4
     - service: tts.google_say
       entity_id: media_player.google_living
       data_template:
@@ -44,9 +44,10 @@
       data_template:
         message: >
           {{ [
-          "もう3時ですよ。",
-          "3時になりました。",
+          "もう3時なんですよ。",
+          "3時になりましたよ。",
           "3時になっちゃいました。",
+          "やばい。3時ですよ。",
           ] | random }}
 
 - alias: Train Info

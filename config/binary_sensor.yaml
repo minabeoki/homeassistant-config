@@ -45,6 +45,10 @@
     - '2023-08-16'
     - '2023-08-17'
     - '2023-08-18'
+    - '2023-12-29'
+    - '2023-01-02'
+    - '2023-01-03'
+    - '2023-01-04'
 
 - platform: template
   sensors:
@@ -59,7 +63,7 @@
       delay_off:
         minutes: 8
       value_template: >-
-        {{ states('sensor.drumwasher_power')|float(0) > 50 }}
+        {{ states('sensor.drumwasher_power')|float(0) > 40 }}
 
 - platform: threshold
   name: cond_hot
@@ -70,8 +74,8 @@
 - platform: threshold
   name: cond_cold
   entity_id: sensor.outdoor_average
-  lower: 15.0
-  hysteresis: 0.5
+  lower: 14.8
+  hysteresis: 0.4
 
 - platform: threshold
   name: cond_very_cold
