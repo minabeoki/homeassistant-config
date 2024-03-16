@@ -58,6 +58,9 @@ recorder:
       - sensor.vindstyrka_living_humidity
       - sensor.vindstyrka_living_temperature
       - sensor.vindstyrka_living_particulate_matter
+      - sensor.vindstyrka_bedroom_humidity
+      - sensor.vindstyrka_bedroom_temperature
+      - sensor.vindstyrka_bedroom_particulate_matter
       - light.corner_light_a
       - light.corner_light_b
       - light.living_light

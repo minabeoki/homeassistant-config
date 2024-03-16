@@ -14,7 +14,23 @@
     - service: tts.google_say
       entity_id: media_player.google_living
       data_template:
-        message: "おはようございます"
+        message: >
+          {% if now().strftime('%H')|int < 12 %}
+            "おはようございます。"
+          {% elif now().strftime('%H')|int >= 18 %}
+            "こんばんは。"
+          {% else %}
+            "こんにちは。"
+          {% endif %}
+          {% if is_state('binary_sensor.cond_very_cold', 'on') %}
+            "すごい寒いですね。"
+          {% elif is_state('binary_sensor.cond_cold', 'on') %}
+            "寒いですね。"
+          {% elif is_state('binary_sensor.cond_hot', 'on') %}
+            "暑いですね。"
+          {% else %}
+            "適温ですね。"
+          {% endif %}
     - service: script.turn_on
       entity_id: script.comfort_living
 
