@@ -1,0 +1,68 @@
+##
+## IKEA Styrbar Zigbee Button
+##
+
+- alias: Ohayo Button
+  trigger:
+    - platform: event
+      event_type: zha_event
+      event_data:
+        device_ieee: '3c:2e:f5:ff:fe:33:8e:eb'
+        device_id: 'ed40a990af75a62b78bdd29ac336d8da'
+        command: "on"
+  action:
+    - service: tts.google_say
+      entity_id: media_player.google_living
+      data_template:
+        message: "おはようございます"
+    - service: script.turn_on
+      entity_id: script.comfort_living
+
+- alias: Oyasumi Button
+  trigger:
+    - platform: event
+      event_type: zha_event
+      event_data:
+        device_ieee: '3c:2e:f5:ff:fe:33:8e:eb'
+        device_id: 'ed40a990af75a62b78bdd29ac336d8da'
+        command: "off"
+  action:
+    - service: tts.google_say
+      entity_id: media_player.google_living
+      data_template:
+        message: "おやすみなさい"
+    - service: script.turn_on
+      entity_id: script.off_heat_bedroom
+
+- alias: Right Button
+  trigger:
+    - platform: event
+      event_type: zha_event
+      event_data:
+        device_ieee: '3c:2e:f5:ff:fe:33:8e:eb'
+        device_id: 'ed40a990af75a62b78bdd29ac336d8da'
+        command: "press"
+        params:
+          param1: 256
+  action:
+    - service: tts.google_say
+      entity_id: media_player.google_living
+      data_template:
+        message: "右ボタン"
+
+- alias: Left Button
+  trigger:
+    - platform: event
+      event_type: zha_event
+      event_data:
+        device_ieee: '3c:2e:f5:ff:fe:33:8e:eb'
+        device_id: 'ed40a990af75a62b78bdd29ac336d8da'
+        command: "press"
+        params:
+          param1: 257
+  action:
+    - service: tts.google_say
+      entity_id: media_player.google_living
+      data_template:
+        message: "左ボタン"
+
