@@ -11,3 +11,9 @@ off_living_light:
       entity_id: light.corner_light_a
     - service: light.turn_off
       entity_id: light.corner_light_b
+
+on_living_light:
+  alias: On Living Light
+  sequence:
+    - service: light.turn_on
+      entity_id: light.living_light

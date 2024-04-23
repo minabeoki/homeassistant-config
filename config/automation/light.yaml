@@ -1,0 +1,25 @@
+##
+## light
+##
+
+- alias: Light On Sunset
+  trigger:
+    - platform: sun
+      event: sunset
+      offset: '-00:10:00'
+  condition:
+    - condition: state
+      entity_id: group.family_devices
+      state: 'home'
+  action:
+    - service: script.turn_on
+      entity_id: script.on_living_light
+
+#- alias: Light Off Sunrise
+#  trigger:
+#    - platform: sun
+#      event: sunrize
+#      offset: '+00:30:00'
+#  action:
+#    - service: script.turn_on
+#      entity_id: script.off_living_light
