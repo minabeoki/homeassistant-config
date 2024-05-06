@@ -1,13 +1,13 @@
 version: '3'
 
 services:
-  hass:
-    image: homeassistant/home-assistant:2023.4.4
+  home-assistant:
+    image: homeassistant/home-assistant:2024.4.4
     container_name: home-assistant
     hostname: hahost
     restart: always
     privileged: true
-    net: "host"
+    network_mode: "host"
     environment:
       TZ: Asia/Tokyo
     volumes:

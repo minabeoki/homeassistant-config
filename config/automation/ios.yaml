@@ -23,6 +23,8 @@
       entity_id: lock.door_lock
       to:
   action:
+    - delay:
+        seconds: 1
     - service: notify.mobile_app_iphone13_pro
       data:
         message: update_complications

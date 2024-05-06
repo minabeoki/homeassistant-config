@@ -93,17 +93,17 @@ zone:
   radius: 300
   icon: mdi:home
 
-proximity:
-  home:
-    devices:
-      - person.me
-    tolerance: 100
-    unit_of_measurement: m
-  home2:
-    devices:
-      - person.partner
-    tolerance: 100
-    unit_of_measurement: m
+#proximity:
+#  home:
+#    devices:
+#      - person.me
+#    tolerance: 100
+#    unit_of_measurement: m
+#  home2:
+#    devices:
+#      - person.partner
+#    tolerance: 100
+#    unit_of_measurement: m
 
 http:
   ip_ban_enabled: false
@@ -170,7 +170,7 @@ mqtt:
 #  static:
 #    - 192.168.0.56
 
-hue:
+#hue:
 
 ios:
   actions:
@@ -253,7 +253,7 @@ google_assistant:
 
 frontend:
 config:
-discovery:
+#discovery:
 history:
 logbook:
 system_health:
