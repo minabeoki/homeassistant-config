@@ -33,6 +33,11 @@
           {% endif %}
     - service: script.turn_on
       entity_id: script.comfort_living
+    - condition: state
+      entity_id: sun.sun
+      state: below_horizon
+    - service: script.turn_on
+      entity_id: script.on_living_light
 
 - alias: Oyasumi Button
   trigger:

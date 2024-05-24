@@ -1,11 +1,10 @@
 heat_living:
   alias: Heat Living
   sequence:
-    - service: climate.set_temperature
+    - service: climate.set_hvac_mode
       data:
         entity_id: climate.living_aircon
-        temperature: 24
-        hvac_mode: heat
+        hvac_mode: auto
     - service: switch.turn_on
       entity_id: switch.floor_heater_living
     - service: switch.turn_on
@@ -59,11 +58,10 @@ heat_bedroom_demand:
 cool_living:
   alias: Cool Living
   sequence:
-    - service: climate.set_temperature
+    - service: climate.set_hvac_mode
       data:
         entity_id: climate.living_aircon
-        temperature: 26
-        hvac_mode: cool
+        hvac_mode: auto
     - service: switch.turn_off
       entity_id: switch.floor_heater_living
     - service: switch.turn_off

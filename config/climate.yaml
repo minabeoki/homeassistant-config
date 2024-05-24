@@ -6,6 +6,8 @@
     - "auto"
     - "cool"
     - "heat"
+    - "dry"
+    - "fan"
   swing_modes:
     - "auto"
   fan_modes:
