@@ -2,7 +2,7 @@ version: '3'
 
 services:
   home-assistant:
-    image: homeassistant/home-assistant:2024.4.4
+    image: homeassistant/home-assistant:2024.5.5
     container_name: home-assistant
     hostname: hahost
     restart: always
@@ -13,6 +13,7 @@ services:
     volumes:
       - /home/hass/config:/config
       - /etc/localtime:/etc/localtime:ro
+      - /run/dbus:/run/dbus:ro
       - /dev/bus/usb:/dev/bus/usb
     devices:
       - /dev/vhci:/dev/vhci

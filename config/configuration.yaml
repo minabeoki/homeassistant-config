@@ -90,7 +90,7 @@ zone:
   name: Home
   latitude:  !secret home_latitude
   longitude: !secret home_longitude
-  radius: 300
+  radius: 200
   icon: mdi:home
 
 #proximity:
@@ -277,11 +277,6 @@ input_boolean:
     initial: off
     icon: mdi:sleep
  
-folder_watcher:
-  - folder: /config/doorphone
-    patterns:
-      - '*.jpg'
-
 camera:
   - platform: local_file
     name: Doorphone

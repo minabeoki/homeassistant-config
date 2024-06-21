@@ -13,14 +13,11 @@
   fan_modes:
     - "auto"
   current_temperature_topic: "sensor/aircon/livingroom/temperature"
-  #power_command_topic:       "aircon/livingroom/power/set"
-  #power_state_topic:         "aircon/livingroom/power"
+  current_humidity_topic:    "sensor/aircon/livingroom/humidity"
   mode_command_topic:        "aircon/livingroom/mode/set"
   mode_state_topic:          "aircon/livingroom/mode"
   temperature_command_topic: "aircon/livingroom/temperature/set"
   temperature_state_topic:   "aircon/livingroom/temperature"
-  payload_on: "on"
-  payload_off: "off"
 
 - name: "Bedroom Aircon"
   modes:
@@ -33,8 +30,6 @@
   fan_modes:
     - "auto"
   current_temperature_topic: "sensor/aircon/bedroom/temperature"
-  #power_command_topic:       "aircon/bedroom/power/set"
-  #power_state_topic:         "aircon/bedroom/power"
   mode_command_topic:        "aircon/bedroom/mode/set"
   mode_state_topic:          "aircon/bedroom/mode"
   temperature_command_topic: "aircon/bedroom/temperature/set"
