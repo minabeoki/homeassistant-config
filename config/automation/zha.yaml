@@ -5,7 +5,7 @@
 - alias: Update vindstyrka
   trigger:
     - platform: time_pattern
-      seconds: "60"
+      seconds: 30
   condition: []
   action:
     - service: zha_toolkit.attr_read

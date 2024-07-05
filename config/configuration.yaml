@@ -53,6 +53,10 @@ recorder:
       - sensor.entrance_temp
       - sensor.dishwasher_power
       - sensor.drumwasher_power
+      - sensor.tasmota_energy_today
+      - sensor.tasmota_energy_total
+      - sensor.tasmotadrum_energy_today
+      - sensor.tasmotadrum_energy_total
       - switch.floor_heater_kitchen
       - switch.floor_heater_living
       - sensor.vindstyrka_living_humidity
