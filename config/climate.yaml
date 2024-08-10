@@ -7,17 +7,21 @@
     - "cool"
     - "heat"
     - "dry"
-    - "fan"
   swing_modes:
     - "auto"
   fan_modes:
     - "auto"
+    - "low"
+    - "medium"
+    - "high"
   current_temperature_topic: "sensor/aircon/livingroom/temperature"
   current_humidity_topic:    "sensor/aircon/livingroom/humidity"
   mode_command_topic:        "aircon/livingroom/mode/set"
   mode_state_topic:          "aircon/livingroom/mode"
   temperature_command_topic: "aircon/livingroom/temperature/set"
   temperature_state_topic:   "aircon/livingroom/temperature"
+  fan_mode_command_topic:    "aircon/livingroom/fan/set"
+  fan_mode_state_topic:      "aircon/livingroom/fan"
 
 - name: "Bedroom Aircon"
   modes:

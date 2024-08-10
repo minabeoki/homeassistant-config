@@ -55,6 +55,10 @@
       value_template: "{{ states.sensor.doorphone.attributes.number_of_files }}"
 
 - platform: file
+  name: doorphone_latest
+  file_path: /config/doorphone/latest.json
+
+- platform: file
   name: trash_day
   file_path: /config/text/gomi.txt
 

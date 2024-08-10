@@ -38,7 +38,7 @@
 - alias: Doorphone push
   trigger:
     - platform: state
-      entity_id: sensor.doorphone_counter
+      entity_id: sensor.doorphone_latest
   condition:
     - condition: state
       entity_id: person.me

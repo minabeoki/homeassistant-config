@@ -36,6 +36,7 @@ recorder:
       - sensor.jr_info
       - sensor.living_temperature
       - sensor.living_humidity
+      - sensor.living_aircon_watt
       - sensor.bedroom_temperature
       - sensor.bedroom_humidity
       - sensor.outdoor_temperature
@@ -163,6 +164,9 @@ mqtt:
     - name: 'Bedroom Humidity'
       state_topic: "sensor/aircon/bedroom/humidity"
       unit_of_measurement: '%'
+    - name: 'Living Aircon Watt'
+      state_topic: "sensor/aircon/livingroom/watt"
+      unit_of_measurement: 'W'
 
 #netatmo:
 #  client_id:     !secret netatmo_id
