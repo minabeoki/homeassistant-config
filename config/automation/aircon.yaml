@@ -70,7 +70,10 @@
   trigger:
     - platform: numeric_state
       entity_id: proximity.home
-      below: 2000
+      below: 2500
+    - platform: numeric_state
+      entity_id: proximity.home2
+      below: 2500
   condition:
     condition: and
     conditions:
@@ -133,7 +136,7 @@
 - alias: Off Bedroom Morning Holiday
   trigger:
     - platform: time
-      at: '14:00:00'
+      at: '13:00:00'
   action:
     - service: script.turn_on
       entity_id: script.off_bedroom

@@ -50,6 +50,58 @@
           "やばい。3時ですよ。",
           ] | random }}
 
+- alias: Moeru Gomi
+  trigger:
+    - platform: time
+      at: '0:30:00'
+    - platform: time
+      at: '1:30:00'
+  condition:
+    - condition: time
+      weekday:
+        - wed
+  action:
+    - service: media_player.volume_set
+      data_template:
+        entity_id: media_player.google_living
+        volume_level: 0.5
+    - service: tts.google_say
+      entity_id: media_player.google_living
+      data_template:
+        message: >
+          {{ [
+          "明日はごみの日です。",
+          "ごみの準備しましたか？",
+          "ごみ出すの忘れないで。",
+          "ごみを出そうね。"
+          ] | random }}
+
+- alias: Shigen Gomi
+  trigger:
+    - platform: time
+      at: '0:30:00'
+    - platform: time
+      at: '1:30:00'
+  condition:
+    - condition: time
+      weekday:
+        - thu
+  action:
+    - service: media_player.volume_set
+      data_template:
+        entity_id: media_player.google_living
+        volume_level: 0.5
+    - service: tts.google_say
+      entity_id: media_player.google_living
+      data_template:
+        message: >
+          {{ [
+          "明日は資源ごみの日です。",
+          "資源ごみの準備しましたか？",
+          "資源ごみ出すの忘れないで。",
+          "資源ごみを出そうね。"
+          ] | random }}
+
 - alias: Train Info
   trigger:
     - platform: time
