@@ -17,7 +17,7 @@ heat_bedroom:
     - service: climate.set_temperature
       data:
         entity_id: climate.bedroom_aircon
-        temperature: 23
+        temperature: 24
         hvac_mode: heat
 
 heat_living_demand:
@@ -155,8 +155,8 @@ off_living:
       entity_id: switch.floor_heater_living
     - service: switch.turn_off
       entity_id: switch.floor_heater_kitchen
-    - service: homeassistant.turn_off
-      entity_id: switch.ceiling_fan
+    - service: script.turn_on
+      entity_id: script.ceiling_fan_off
     - service: homeassistant.turn_off
       entity_id: fan.living_circulator
     - condition: template

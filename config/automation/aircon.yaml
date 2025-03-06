@@ -87,7 +87,7 @@
 - alias: Comfort Living Morning
   trigger:
     - platform: time
-      at: '07:00:00'
+      at: '06:40:00'
   condition:
     condition: and
     conditions:
@@ -104,7 +104,7 @@
 - alias: Off Living Morning
   trigger:
     - platform: time
-      at: '08:59:00'
+      at: '07:59:00'
   condition:
     - condition: state
       entity_id: binary_sensor.workday_sensor

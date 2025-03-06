@@ -1,0 +1,21 @@
+ceiling_fan_on:
+  alias: Ceiling Fan On
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.rm4mini
+        device: ceiling_fan
+        command: 'low'
+        num_repeats: 2
+        delay_secs: 0.5
+
+ceiling_fan_off:
+  alias: Ceiling Fan Off
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.rm4mini
+        device: ceiling_fan
+        command: 'off'
+        num_repeats: 2
+        delay_secs: 0.5
