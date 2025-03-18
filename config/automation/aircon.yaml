@@ -69,10 +69,10 @@
 - alias: Comfort Living Night
   trigger:
     - platform: numeric_state
-      entity_id: proximity.home
+      entity_id: sensor.me_distance
       below: 2500
     - platform: numeric_state
-      entity_id: proximity.home2
+      entity_id: sensor.partner_distance
       below: 2500
   condition:
     condition: and

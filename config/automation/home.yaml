@@ -5,7 +5,7 @@
 - alias: Return Home
   trigger:
     - platform: numeric_state
-      entity_id: proximity.home2
+      entity_id: sensor.partner_distance
       below: 5000
   condition:
     condition: and
