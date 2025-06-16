@@ -54,21 +54,21 @@
     doorphone_counter:
       value_template: "{{ states.sensor.doorphone.attributes.number_of_files }}"
 
-- platform: file
-  name: doorphone_latest
-  file_path: /config/doorphone/latest.json
+#- platform: file
+#  name: doorphone_latest
+#  file_path: /config/doorphone/latest.json
 
-- platform: file
-  name: trash_day
-  file_path: /config/text/gomi.txt
+#- platform: file
+#  name: trash_day
+#  file_path: /config/text/gomi.txt
 
-- platform: file
-  name: visit_schedule
-  file_path: /config/text/schedule.txt
+#- platform: file
+#  name: visit_schedule
+#  file_path: /config/text/schedule.txt
 
-- platform: file
-  name: weather_forecast
-  file_path: /config/text/forecast.txt
+#- platform: file
+#  name: weather_forecast
+#  file_path: /config/text/forecast.txt
 
 #- platform: scrape
 #  resource: http://weather.livedoor.com/forecast/rss/area/130010.xml
