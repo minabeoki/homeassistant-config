@@ -84,9 +84,9 @@ adjust_bedroom:
     - service: climate.set_temperature
       data:
         entity_id: climate.bedroom_aircon
-        temperature: 28
+        temperature: 27
     - delay:
-        minutes: 80
+        minutes: 90
     - service: climate.set_temperature
       data:
         entity_id: climate.bedroom_aircon

@@ -32,7 +32,7 @@
 - alias: Adjust Bedroom Night
   trigger:
     - platform: time
-      at: '01:20:00'
+      at: '00:30:00'
   condition:
     condition: and
     conditions:
@@ -136,7 +136,7 @@
 - alias: Off Bedroom Morning Holiday
   trigger:
     - platform: time
-      at: '13:00:00'
+      at: '13:30:00'
   action:
     - service: script.turn_on
       entity_id: script.off_bedroom
