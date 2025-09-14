@@ -70,10 +70,10 @@
   trigger:
     - platform: numeric_state
       entity_id: sensor.me_distance
-      below: 2500
+      below: 1300
     - platform: numeric_state
       entity_id: sensor.partner_distance
-      below: 2500
+      below: 1300
   condition:
     condition: and
     conditions:
