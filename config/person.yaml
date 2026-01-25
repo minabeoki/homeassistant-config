@@ -1,0 +1,15 @@
+- name: me
+  id: me
+  user_id: !secret person_id_me
+  device_trackers:
+    - device_tracker.iphonex_3
+    - device_tracker.iphonex_gps
+
+- name: partner
+  id: partner
+  user_id: !secret person_id_partner
+  device_trackers:
+    - device_tracker.iphone_se
+    - device_tracker.iphone11
+    - device_tracker.iphone11_gps
+

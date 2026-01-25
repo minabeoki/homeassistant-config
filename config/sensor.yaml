@@ -20,40 +20,6 @@
     - filter: time_simple_moving_average
       window_size: "24:00"
 
-- platform: template
-  sensors:
-    reference:
-      value_template: >-
-        {{ ((states.sensor.outdoor0.state|float) +
-            (states.sensor.outdoor1.state|float)) / 2.0 +
-           ((states("sensor.living_humidity")|float) +
-            (states("sensor.bedroom_humidity")|float) - 80.0) / 20.0 }}
-
-    outdoor_temperature:
-      value_template: "{{ ((states.sensor.outdoor0.state|float)+(states.sensor.outdoor1.state|float))/2.0 }}"
-
-    entrance_temp:
-      value_template: "{{ states.sensor.hue_motion_sensor_temperature.state }}"
-
-    entrance_lux:
-      value_template: "{{ states.sensor.hue_motion_sensor_light_level.state|float(0)|round(1) }}"
-
-    dishwasher_power:
-      value_template: >-
-        {{ states('sensor.tasmota_energy_power')|float(0) }}
-
-    drumwasher_power:
-      value_template: >-
-        {{ states('sensor.tasmotadrum_energy_power')|float(0) }}
-
-- platform: folder
-  folder: /config/doorphone
-
-- platform: template
-  sensors:
-    doorphone_counter:
-      value_template: "{{ states.sensor.doorphone.attributes.number_of_files }}"
-
 #- platform: file
 #  name: doorphone_latest
 #  file_path: /config/doorphone/latest.json

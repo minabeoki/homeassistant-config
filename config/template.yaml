@@ -1,0 +1,53 @@
+# template
+
+- sensor:
+  - name: reference
+    default_entity_id: sensor.reference
+    state: >-
+      {{ ((states.sensor.outdoor0.state|float) +
+          (states.sensor.outdoor1.state|float)) / 2.0 +
+         ((states("sensor.living_humidity")|float) +
+          (states("sensor.bedroom_humidity")|float) - 80.0) / 20.0 }}
+
+  - name: outdoor_temperature
+    state: "{{ ((states.sensor.outdoor0.state|float)+(states.sensor.outdoor1.state|float))/2.0 }}"
+
+  - name: entrance_temp
+    default_entity_id: sensor.entrance_temp
+    state: "{{ states.sensor.hue_motion_sensor_temperature.state }}"
+
+  - name: entrance_lux
+    default_entity_id: sensor.entrance_lux
+    state: "{{ states.sensor.hue_motion_sensor_light_level.state|float(0)|round(1) }}"
+
+  - name: dishwasher_power
+    default_entity_id: sensor.dishwasher_power
+    state: >-
+        {{ states('sensor.tasmota_energy_power')|float(0) }}
+
+  - name: drumwasher_power
+    default_entity_id: sensor.drumwasher_power
+    state: >-
+        {{ states('sensor.tasmotadrum_energy_power')|float(0) }}
+
+  - name: doorphone_counter
+    default_entity_id: sensor.doorphone_counter
+    state: "{{ states.sensor.doorphone.attributes.number_of_files }}"
+
+- binary_sensor:
+  - name: dishwasher
+    default_entity_id: sensor.dishwasher
+    delay_off:
+      minutes: 10
+    value_template: >-
+      {{ states('sensor.dishwasher_power')|float(0) > 3 }}
+
+  - name: drumwasher
+    default_entity_id: sensor.drumwasher
+    delay_on:
+      minutes: 3
+    delay_off:
+      minutes: 3
+    value_template: >-
+      {{ states('sensor.drumwasher_power')|float(0) > 9 }}
+

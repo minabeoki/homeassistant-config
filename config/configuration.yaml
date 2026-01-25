@@ -278,6 +278,7 @@ person: !include person.yaml
 switch: !include switch.yaml
 sensor: !include sensor.yaml
 binary_sensor: !include binary_sensor.yaml
+template: !include template.yaml
 scrape: !include scrape.yaml
 
 input_boolean:
@@ -286,10 +287,10 @@ input_boolean:
     initial: off
     icon: mdi:sleep
  
-camera:
-  - platform: local_file
-    name: Doorphone
-    file_path: /config/doorphone/latest.jpg
+#camera:
+#  - platform: local_file
+#    name: Doorphone
+#    file_path: /config/doorphone/latest.jpg
 
 tts:
   - platform: google_translate
