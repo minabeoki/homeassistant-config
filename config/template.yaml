@@ -1,6 +1,7 @@
 # template
 
 - sensor:
+
   - name: reference
     default_entity_id: sensor.reference
     state: >-
@@ -30,24 +31,73 @@
     state: >-
         {{ states('sensor.tasmotadrum_energy_power')|float(0) }}
 
-  - name: doorphone_counter
-    default_entity_id: sensor.doorphone_counter
-    state: "{{ states.sensor.doorphone.attributes.number_of_files }}"
+#  - name: doorphone_counter
+#    default_entity_id: sensor.doorphone_counter
+#    state: "{{ states.sensor.doorphone.attributes.number_of_files }}"
 
 - binary_sensor:
+
   - name: dishwasher
-    default_entity_id: sensor.dishwasher
+    default_entity_id: binary_sensor.dishwasher
     delay_off:
       minutes: 10
-    value_template: >-
+    state: >-
       {{ states('sensor.dishwasher_power')|float(0) > 3 }}
 
   - name: drumwasher
-    default_entity_id: sensor.drumwasher
+    default_entity_id: binary_sensor.drumwasher
     delay_on:
       minutes: 3
     delay_off:
       minutes: 3
-    value_template: >-
+    state: >-
       {{ states('sensor.drumwasher_power')|float(0) > 9 }}
+
+- switch:
+
+  - name: heat_living
+    default_entity_id: switch.heat_living
+    turn_on:
+    - entity_id: script.heat_living
+      action: script.turn_on
+    turn_off:
+    - entity_id: script.off_living
+      action: script.turn_on
+    state: >-
+      {{     is_state('climate.living_aircon', 'heat')
+         and is_state('switch.floor_heater_living', 'on')
+         and is_state('switch.floor_heater_kitchen', 'on') }}
+
+  - name: heat_bedroom
+    default_entity_id: switch.heat_bedroom
+    turn_on:
+    - entity_id: script.heat_bedroom
+      action: script.turn_on
+    turn_off:
+    - entity_id: script.off_bedroom
+      action: script.turn_on
+    state: >-
+      {{ is_state('climate.bedroom_aircon', 'heat') }}
+
+  - name: cool_living
+    default_entity_id: switch.cool_living
+    turn_on:
+    - entity_id: script.cool_living
+      action: script.turn_on
+    turn_off:
+    - entity_id: script.off_living
+      action: script.turn_on
+    state: >-
+      {{ is_state('climate.bedroom_aircon', 'cool') }}
+
+  - name: cool_bedroom
+    default_entity_id: switch.cool_bedroom
+    turn_on:
+    - entity_id: script.cool_bedroom
+      action: script.turn_on
+    turn_off:
+    - entity_id: script.off_bedroom
+      action: script.turn_on
+    state: >-
+      {{ is_state('climate.bedroom_aircon', 'cool') }}
 

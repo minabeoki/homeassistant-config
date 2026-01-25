@@ -275,7 +275,7 @@ media_source:
 zha_toolkit:
 
 person: !include person.yaml
-switch: !include switch.yaml
+#switch: !include switch.yaml
 sensor: !include sensor.yaml
 binary_sensor: !include binary_sensor.yaml
 template: !include template.yaml
