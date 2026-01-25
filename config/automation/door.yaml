@@ -19,6 +19,11 @@
       to: 'unlocked'
       for:
         minutes: 15
+    - platform: state
+      entity_id: lock.door_lock
+      to: 'unlocked'
+      for:
+        minutes: 60
   condition:
     - condition: state
       entity_id: lock.door_lock
@@ -28,7 +33,7 @@
       entity_id: media_player.google_living
       data_template:
         message: "玄関の鍵が開いてます"
-    - service: notify.mobile_app_iphone13_pro
+    - service: notify.mobile_app_iphone_air
       data:
         message: "鍵が開いてます"
         data:
@@ -44,7 +49,7 @@
       entity_id: person.me
       state: 'not_home'
   action:
-    - service: notify.mobile_app_iphone13_pro
+    - service: notify.mobile_app_iphone_air
       data:
         message: "自宅に訪問者がいます"
         data:

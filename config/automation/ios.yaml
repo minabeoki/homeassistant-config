@@ -25,7 +25,7 @@
   action:
     - delay:
         seconds: 1
-    - service: notify.mobile_app_iphone13_pro
+    - service: notify.mobile_app_iphone_air
       data:
         message: update_complications
 
