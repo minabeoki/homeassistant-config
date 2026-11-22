@@ -15,6 +15,8 @@
       data_template:
         entity_id: media_player.google_living
         volume_level: 0.4
+    - delay:
+        seconds: 1
     - service: tts.google_say
       entity_id: media_player.google_living
       data_template:

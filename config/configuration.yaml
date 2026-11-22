@@ -111,8 +111,8 @@ zone:
 #    tolerance: 100
 #    unit_of_measurement: m
 
-http:
-  ip_ban_enabled: false
+#http:
+#  ip_ban_enabled: false
 #  external_url: !secret http_base_url
 #  internal_url: !secret http_base_url
 #  api_password: !secret http_password

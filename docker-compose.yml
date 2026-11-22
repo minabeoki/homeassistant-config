@@ -1,6 +1,6 @@
 services:
   home-assistant:
-    image: homeassistant/home-assistant:2026.6.1
+    image: homeassistant/home-assistant:2026.11.2
     container_name: home-assistant
     hostname: hahost
     restart: always

@@ -1,0 +1,8 @@
+toggle_lock:
+  alias: "Door Lock/Unlock"
+  sequence:
+    - condition: state
+      entity_id: group.family_devices
+      state: 'home'
+    - service: "lock.{{ 'lock' if states('lock.door_lock') == 'unlocked' else 'unlock' }}"
+      entity_id: lock.door_lock
